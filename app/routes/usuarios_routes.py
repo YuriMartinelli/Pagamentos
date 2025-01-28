@@ -1,13 +1,12 @@
 from fastapi import APIRouter
-
 from app.controllers.usuarios_controller import UsuarioController
 from app.typings.usuariosTypes import UsuarioModel
 
-usuarios_router = APIRouter(prefix="/usuarios")
+USUARIOS_ROUTER = APIRouter(prefix="/usuarios")
 
 USUARIO_CONTROLLER = UsuarioController()
 
 
-@usuarios_router.post("/criar")
-def criar_usuarios(data: UsuarioModel):
+@USUARIOS_ROUTER.post("/criar")
+def criar_usuarios(data):
     return USUARIO_CONTROLLER.create(data)

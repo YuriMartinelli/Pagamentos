@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routes.usuarios_routes import usuarios_router
+from app.routes.usuarios_routes import USUARIOS_ROUTER
 
 app = FastAPI()
 
@@ -10,4 +10,4 @@ def pong() -> dict[str, str]:
     return {"ping": "pong!"}
 
 
-app.include_router(usuarios_router)
+app.include_router(USUARIOS_ROUTER)
